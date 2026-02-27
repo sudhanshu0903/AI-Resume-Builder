@@ -1,0 +1,202 @@
+/* ===== Global Reset ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #152852, #1e293b);
+    padding: 40px 20px;
+    color: #333;
+}
+
+/* ===== Title ===== */
+.title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #0f63d8;
+}
+
+/* ===== Form Card ===== */
+.form {
+    max-width: 900px;
+    margin: auto;
+    background: #989090;
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Inputs & Textareas ===== */
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: #fff;
+}
+
+.form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* Focus effect */
+.form input:focus,
+.form textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Placeholder */
+.form input::placeholder,
+.form textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* ===== Button ===== */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* ===== Resume Page ===== */
+.resume {
+    background: white;
+    max-width: 900px;
+    margin: 40px auto 15px auto;
+    padding: 45px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #111827;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.header p {
+    margin-top: 6px;
+    font-size: 15px;
+    color: #6b7280;
+}
+
+/* Sections */
+.section {
+    margin-top: 28px;
+}
+
+.section h3 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+/* Skills */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 40px;
+    padding-left: 20px;
+}
+
+/* ===== AI Feedback Card ===== */
+.feedback {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #eff6ff, #e0ecff);
+    border-left: 5px solid #2563eb;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.15);
+}
+
+.feedback h3 {
+    margin-top: 0;
+    color: #1e40af;
+}
+
+/* ===== Print Mode ===== */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .form,
+    .feedback,
+    .title {
+        display: none;
+    }
+
+    .resume {
+        box-shadow: none;
+        margin: 0;
+        padding: 35px;
+        border-radius: 0;
+    }
+}
+
+
+.action-bar {
+    max-width: 900px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.action-bar button {
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+}
+
+.action-bar button:first-child {
+    background: #64748b;
+}
+
+.action-bar button:hover {
+    opacity: 0.9;
+}
