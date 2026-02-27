@@ -1,5 +1,5 @@
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import google.generativeai as genai
 
@@ -8,21 +8,11 @@ import os
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-app = Flask(__name__, static_folder="static", template_folder="templates")
 
-
-
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-@app.route("/resume")
-def resume():
-    return render_template("resume.html")
 # Configure Gemini
 genai.configure(api_key=GEMINI_API_KEY)
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)
 
 # Load model (this ALWAYS works with AI Studio keys)
@@ -79,7 +69,15 @@ Rules:
             "Tailor the resume to match the job description"
         ]
 
+@app.route("/")
+def home():
+    return render_template("index.html")
 
+
+@app.route("/resume")
+def resume():
+    return render_template("resume.html")
+    
 @app.route("/generate", methods=["POST"])
 def generate_resume():
     data = request.json
@@ -110,4 +108,5 @@ def generate_resume():
 
 if __name__ == "__main__":
     print("DEBUG → GEMINI_API_KEY =", repr(GEMINI_API_KEY))
+
     app.run(debug=True)
